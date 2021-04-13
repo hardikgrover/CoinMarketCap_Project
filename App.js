@@ -1,27 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View,TouchableWithoutFeedback, SafeAreaView,Image, Button, Alert, Platform } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, FlatList } from 'react-native'
 
+class HttpExample extends Component {
+   state = {
+      data: ''
+   }
+   componentDidMount = () => {
+      fetch('https://api1.binance.com/api/v3/ticker/price', {
+         method: 'GET'
+      })
+      .then((response) => response.json())
+      .then((responseJson) => {
+         console.log(responseJson);
+         this.setState({
+            data: responseJson
+         })
+      })
+      .catch((error) => {
+         console.error(error);
+      });
+   }
+   render() {
+     console.log(this.state.data)
+      return (
+         <View style={{flex:1,backgroundColor:'#ffffff'}}>
+           <FlatList
+           data={this.state.data}
+           renderItem={({item,index})=>{
+             return <View>
+               <Text>{item.symbol}</Text>
+             </View>
+           }}
+           >
 
+           </FlatList>
 
-export default function App() {
-  
-  
-  return (
-    <View style={styles.container}>
-      <Text>hi there my name is hardik </Text>
-     
-    </View>
-  );
+         </View>
+      )
+   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'green',
-    paddingTop:Platform.OS === "android"? StatusBar.currentHeight:0,
-    
-  },
-});
+export default HttpExample
 
 
