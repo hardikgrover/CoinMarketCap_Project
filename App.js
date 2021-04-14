@@ -17,19 +17,18 @@ class App extends Component {
          this.setState({
             data: responseJson
          })
-      })
-      .catch((error) => {
-         console.error(error);
-      });
+      })  
+   
    }
    render() {
     //  console.log(this.state.data)
       return (
-        // <List data= {this.state.data}></List>
         <List data={this.state.data}></List>
       )
    }
 }
 export default App
+
+
 
 
