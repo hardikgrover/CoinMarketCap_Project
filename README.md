@@ -9,7 +9,7 @@ A Screen of the app called 'CoinMarketPlace' was to be implemented and 'ticker e
  
  ### MAIN SCREEN 
  The Main Screen of app looks like this:<br>
- ![](assets/MainScreen.jpeg)
+ ![](assets/Main-Screen.jpeg)
   
 
 
