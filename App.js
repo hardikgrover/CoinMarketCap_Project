@@ -13,7 +13,7 @@ class App extends Component {
       })
       .then((response) => response.json())
       .then((responseJson) => {
-        //  console.log(responseJson);
+         console.log(responseJson);
          this.setState({
             data: responseJson
          })
@@ -24,11 +24,13 @@ class App extends Component {
     //  console.log(this.state.data)
       return (
         <List data={this.state.data}></List>
+      
       )
    }
 }
 export default App
 
 
+// 'https://api1.binance.com/api/v3/ticker/price'
 
-
+// 'https://api.coinmarketcap.com'
