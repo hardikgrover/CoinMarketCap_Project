@@ -1,7 +1,9 @@
+import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react'
 import { View, Text, FlatList } from 'react-native'
+import List from './components/List';
 
-class HttpExample extends Component {
+class App extends Component {
    state = {
       data: ''
    }
@@ -11,7 +13,7 @@ class HttpExample extends Component {
       })
       .then((response) => response.json())
       .then((responseJson) => {
-         console.log(responseJson);
+        //  console.log(responseJson);
          this.setState({
             data: responseJson
          })
@@ -21,24 +23,13 @@ class HttpExample extends Component {
       });
    }
    render() {
-     console.log(this.state.data)
+    //  console.log(this.state.data)
       return (
-         <View style={{flex:1,backgroundColor:'#ffffff'}}>
-           <FlatList
-           data={this.state.data}
-           renderItem={({item,index})=>{
-             return <View>
-               <Text>{item.symbol}</Text>
-             </View>
-           }}
-           >
-
-           </FlatList>
-
-         </View>
+        // <List data= {this.state.data}></List>
+        <List data={this.state.data}></List>
       )
    }
 }
-export default HttpExample
+export default App
 
 
