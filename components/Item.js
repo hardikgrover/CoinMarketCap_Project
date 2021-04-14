@@ -5,7 +5,7 @@ const List = (props) => {
    return (
     <View style={styles.listItem}>
                <Text style={{fontSize:12,fontWeight:'700'}}>{props.item.symbol}</Text>
-               <Text style={{fontSize:12,fontWeight:'7000', paddingLeft:40,color:'blue',marginRight:5}}>$ {props.item.price}</Text>
+               <Text style={{fontSize:12,fontWeight:'700', paddingLeft:40,color:'blue',marginLeft:60 }}>$ {props.item.price}</Text>
              </View>
    )
 }
